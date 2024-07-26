@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sistema de Aluguel de Carros</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../img/0cb47848-3dc2-4eac-bf8b-22f6e03e0bd6.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="../index.html">Calculadora de Preço</a></li>
+            <li><a href="#">Veículos Disponíveis</a></li>
+            <li><a href="#" id="about-us">Sobre nós</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <button class="hide-nav" onclick="toggleNav()">←</button>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <img src="../img/`logosd.png" alt="">
+        <h1>Quem Somos?</h1>
+        <p>Somos uma empresa de aluguel de carros com mais de 10 anos de experiência no mercado. Nossa equipe é composta
+            por profissionais experientes e dedicados a oferecer aos nossos clientes a melhor experiência de aluguel de
+            carros possível.</p>
+    </aside>
+
+    <main>
+        <div class="container">
+            <img src="../img/`logosd.png" alt="">
+
+            <h1>Ola, seja bem-vindo!</h1>
+            <p>Preencha as informações abaixo:</p>
+            <div class="form-group-email">
+                <label for="email">Usuario</label>
+                <input type="email" id="email" placeholder="Digite seu email de acesso">
+            </div>
+            <div class="form-group-senha">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha de acesso">
+            </div>
+            <input type="submit" value="Entrar"><a href="login.php"></a>
+
+            <div class="criar-home">
+                <div class="remember">
+                </div>
+                <a href="cadastro.php">Não tem uma conta? Cadastre-se</a>
+            </div>
+
+        </div>
+
+       
+    </main>
+
+    <button class="toggle-nav" onclick="toggleNav()">☰</button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
