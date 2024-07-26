@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de preço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de Navegação Lateral -->
+    <div class="navbar" id="navbar">
+        <div class="logo">
+            <img src="./img/0cb47848-3dc2-4eac-bf8b-22f6e03e0bd6.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Botão para Alternar a Navbar -->
+    <button class="toggle-nav" onclick="toggleNavbar()" id="toggleButton">
+        ☰
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h1>Simulador de preço </h1>
+        <div class="form-group">
+            <label for="precoDiario">Preço diário do carro:</label>
+            <input type="text" id="precoDiario" placeholder="Digite o preço diário do carro">
+        </div>
+        <div class="form-group">
+            <label for="diasAluguel">Número de dias de aluguel:</label>
+            <input type="number" id="diasAluguel" placeholder="Digite o número de dias">
+        </div>
+        <div class="form-group">
+            <label for="desconto">Desconto (%) (opcional):</label>
+            <input type="text" id="desconto" placeholder="Digite o percentual de desconto (opcional)">
+        </div>
+        <button onclick="calcularAluguel()">Calcular</button>
+        <h2>Resultados:</h2>
+        <p id="valorTotal">Valor total do aluguel: R$ </p>
+        <p id="valorDesconto">Valor do desconto: R$ </p>
+        <p id="valorFinal">Valor final do aluguel: R$ </p>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        function parseNumber(value) {
+            return parseFloat(value.replace(',', '.')) || 0;
+        }
+
+        function calcularAluguel() {
+            var precoDiario = parseNumber(document.getElementById('precoDiario').value);
+            var diasAluguel = parseInt(document.getElementById('diasAluguel').value);
+            var desconto = parseNumber(document.getElementById('desconto').value);
+
+            var valorTotal = precoDiario * diasAluguel;
+            var valorDesconto = valorTotal * (desconto / 100);
+            var valorFinal = valorTotal - valorDesconto;
+
+            document.getElementById('valorTotal').textContent = "Valor total do aluguel: R$ " + valorTotal.toFixed(2);
+            document.getElementById('valorDesconto').textContent = "Valor do desconto: R$ " + valorDesconto.toFixed(2);
+            document.getElementById('valorFinal').textContent = "Valor final do aluguel: R$ " + valorFinal.toFixed(2);
+        }
+
+        function toggleNavbar() {
+            var body = document.body;
+            var toggleButton = document.getElementById('toggleButton');
+            body.classList.toggle('show-navbar');
+            // Troca o ícone do botão
+            if (body.classList.contains('show-navbar')) {
+                toggleButton.textContent = '←'; // Seta de retorno
+            } else {
+                toggleButton.textContent = '☰'; // Menu
+            }
+        }
+
+        function hideNavbar() {
+            var body = document.body;
+            var toggleButton = document.getElementById('toggleButton');
+            body.classList.remove('show-navbar');
+            toggleButton.textContent = '☰'; // Menu
+        }
+    </script>
+</body>
+</html>

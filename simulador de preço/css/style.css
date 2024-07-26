@@ -1,0 +1,145 @@
+/* Reseta alguns estilos padrão do navegador */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(../img/pexels-vladimirsrajber-24406137.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Estiliza a navbar lateral */
+.navbar {
+    width: 250px;
+    background-color: #ffffffaf;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+    /* Removido a transição */
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    background: none;
+    padding-top: 30px;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Estiliza os itens da lista dentro da navbar */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 15px 0;
+}
+
+.navbar ul li a {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.navbar ul li a:hover {
+    background-color: #cdcdcd;
+}
+
+/* Estiliza o container principal da página */
+.container {
+    margin: 0 auto;
+    color: #000000;
+    margin-left: 650px; /* Ajusta a margem esquerda para acomodar a navbar */
+    margin-top: 100px;
+    background-color: #f1f1f1c3;
+    max-width: 880px;
+    max-height: 580px;
+    padding: 20px;
+    border-radius: 8px;
+    /* Removida a transição */
+}
+
+/* Estiliza o botão para alternar a visibilidade da navbar */
+.toggle-nav {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #f7f7f7;
+    color: rgb(6, 5, 5);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que o botão fique acima da navbar */
+}
+
+.toggle-nav:hover {
+    background-color: #c11717;
+}
+
+/* Exibe a navbar quando a classe 'show-navbar' é adicionada */
+.show-navbar .navbar {
+    transform: translateX(0);
+}
+
+/* Estiliza o botão para esconder a navbar */
+
+
+.hide-nav:hover {
+    background-color: #c9302c;
+}
+
+/* Estiliza o formulário e resultados */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    
+}
+
+input[type="text"], input[type="number"] {
+    width: 90%; /* Ajusta o campo de entrada para a largura total do container */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ba171f;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f1010;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
