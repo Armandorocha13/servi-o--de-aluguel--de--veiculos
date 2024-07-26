@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de preço</title>
     <link rel="stylesheet" href="css/style.css">
+        
 </head>
 <body>
     <!-- Barra de Navegação Lateral -->
@@ -47,44 +48,5 @@
         <p id="valorFinal">Valor final do aluguel: R$ </p>
     </div>
 
-    <!-- Script JavaScript -->
-    <script>
-        function parseNumber(value) {
-            return parseFloat(value.replace(',', '.')) || 0;
-        }
-
-        function calcularAluguel() {
-            var precoDiario = parseNumber(document.getElementById('precoDiario').value);
-            var diasAluguel = parseInt(document.getElementById('diasAluguel').value);
-            var desconto = parseNumber(document.getElementById('desconto').value);
-
-            var valorTotal = precoDiario * diasAluguel;
-            var valorDesconto = valorTotal * (desconto / 100);
-            var valorFinal = valorTotal - valorDesconto;
-
-            document.getElementById('valorTotal').textContent = "Valor total do aluguel: R$ " + valorTotal.toFixed(2);
-            document.getElementById('valorDesconto').textContent = "Valor do desconto: R$ " + valorDesconto.toFixed(2);
-            document.getElementById('valorFinal').textContent = "Valor final do aluguel: R$ " + valorFinal.toFixed(2);
-        }
-
-        function toggleNavbar() {
-            var body = document.body;
-            var toggleButton = document.getElementById('toggleButton');
-            body.classList.toggle('show-navbar');
-            // Troca o ícone do botão
-            if (body.classList.contains('show-navbar')) {
-                toggleButton.textContent = '←'; // Seta de retorno
-            } else {
-                toggleButton.textContent = '☰'; // Menu
-            }
-        }
-
-        function hideNavbar() {
-            var body = document.body;
-            var toggleButton = document.getElementById('toggleButton');
-            body.classList.remove('show-navbar');
-            toggleButton.textContent = '☰'; // Menu
-        }
-    </script>
 </body>
 </html>
